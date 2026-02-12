@@ -1,0 +1,193 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom right, #fff0f5, #fde2ec);
+  overflow-x: hidden;
+}
+
+/* Slides */
+.slide {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+}
+
+.slide-one {
+  flex-direction: column;
+}
+
+.center-box {
+  text-align: center;
+}
+
+.center-box h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  color: #c2185b;
+  margin-bottom: 30px;
+}
+
+button {
+  padding: 12px 35px;
+  border: none;
+  border-radius: 30px;
+  background: #ff4d6d;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: #d81b60;
+  transform: scale(1.05);
+}
+
+/* Slide 2 */
+.slide-two {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Message */
+.message {
+  width: 45%;
+}
+
+.message h2 {
+  font-family: 'Playfair Display', serif;
+  color: #ad1457;
+  margin-bottom: 20px;
+}
+
+.scroll-box {
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.scroll-box p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #880e4f;
+}
+
+/* PHOTO SIDE */
+.photo-side {
+  width: 45%;
+  overflow: hidden;
+}
+
+/* Swipe container */
+.photo-slider {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px;
+}
+
+.photo-slider::-webkit-scrollbar {
+  display: none;
+}
+
+/* Scrapbook circles */
+.circle-frame {
+  min-width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 6px solid white;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.circle-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.circle-frame:hover {
+  transform: scale(1.1) rotate(2deg);
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  border-radius: 20px;
+}
+
+.close {
+  position: absolute;
+  top: 40px;
+  right: 60px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .slide-two {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .message, .photo-side {
+    width: 100%;
+  }
+
+  .circle-frame {
+    min-width: 120px;
+    height: 120px;
+  }
+
+  .center-box h1 {
+    font-size: 28px;
+  }
+}
+
+/* Falling hearts */
+.falling-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.fall {
+  position: absolute;
+  font-size: 20px;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% { transform: translateY(-10vh); opacity: 1; }
+  100% { transform: translateY(110vh); opacity: 0; }
+}
